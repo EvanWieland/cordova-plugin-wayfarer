@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-motion-plugin" version="1.0.0">
-    <name>ngMotion</name>
-    <author>Deepak Yadav</author>
-    <description>Cordova plugin to detect when a user is driving or walking that supports both iOS and Android</description>
-    <keywords>cordova, shake, gesture, accelerometer, acceleration, detection, location, dyd</keywords>
-    <engines>
-        <engine name="cordova" version=">=3.0.0" />
-    </engines>
-    <js-module src="www/ngmotion.js" name="ngmotion">
-        <clobbers target="ngmotion" />
-    </js-module>
-    <dependency id="org.apache.cordova.device-motion" version=">=0.2.0" />
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-wayfarer" version="1.0.0">
+	<name>Wayfarer</name>
+	<license>MIT</license>
+	<description>Cordova plugin for determining activity based on device motion.</description>
+	<keywords>cordova, wayfarer</keywords>
+	<repo>https://github.com/EvanWieland/cordova-plugin-wayfarer.git</repo>
+
+	<js-module src="www/Wayfarer.js" name="Wayfarer">
+		<clobbers target="window.Wayfarer"/>
+	</js-module>
+	
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<dependency id="org.apache.cordova.device-motion" version=">=0.2.0" />
 	<dependency id="org.apache.cordova.geolocation" version=">=0.2.0" />
 </plugin>
