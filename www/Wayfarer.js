@@ -2,7 +2,7 @@
 module.exports = (function () {
     "use strict";
                   
-    var ngmotion = {},
+    var wayfarer = {},
         successCallBack = null,
         failCallBack = null,
         motionTypeNotMoving = 1,
@@ -20,7 +20,7 @@ module.exports = (function () {
         frequence = 3000;
 
     // Start watching the motion gesture
-    ngmotion.startWatch = function (onSuccess, onFail, _walkingSpeed, _runningSpeed, _drivingSpeed, _frequence) {
+    wayfarer.startWatch = function (onSuccess, onFail, _walkingSpeed, _runningSpeed, _drivingSpeed, _frequence) {
         if (onSuccess) {
             successCallBack = onSuccess;
         }
@@ -50,7 +50,7 @@ module.exports = (function () {
     };
 
     // Stop watching the motion gesture
-    ngmotion.stopWatch = function () {
+    wayfarer.stopWatch = function () {
         if (accelerationWatchID !== null) {
             navigator.accelerometer.clearWatch(accelerationWatchID);
             accelerationWatchID = null;
@@ -125,5 +125,5 @@ module.exports = (function () {
         }
     }
     
-    return ngmotion;
+    return wayfarer;
 })();
