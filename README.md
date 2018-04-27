@@ -7,7 +7,7 @@ Wayfarer predicts the current activity a user is engaged in by analayzing the de
 
 ## Installation
 
-    cordova plugin add cordova-netto-wayfarer
+    cordova plugin add cordova-plugin-wayfarer
 
 ## Supported Platforms
 
