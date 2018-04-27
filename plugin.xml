@@ -13,7 +13,4 @@
 	<engines>
 		<engine name="cordova" version=">=3.0.0" />
 	</engines>
-
-	<dependency id="org.apache.cordova.device-motion" version=">=0.2.0" />
-	<dependency id="org.apache.cordova.geolocation" version=">=0.2.0" />
 </plugin>
