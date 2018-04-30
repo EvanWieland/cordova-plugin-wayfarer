@@ -1,4 +1,4 @@
-# 🌊⛵🌊 Cordova Wayfarer Plugin
+# 🌊⛵🌊 Cordova Wayfarer Plugin [Under Construction]
 Cordova plugin for determining activity based on device motion.
 
 ## Purpose
