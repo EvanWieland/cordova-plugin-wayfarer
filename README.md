@@ -45,13 +45,8 @@ Wayfarer.unsubscribe(
 
 ## Credits
 
-### Android
-
-Credits to [@polybuildr](https://github.com/polybuildr/cordova-plugin-activity-recognition) for much of the Android code.
-
-### iOS
-
-Credits to [@mrameezraja](https://github.com/mrameezraja/cordova-plugin-motion-activity) for much of the iOS code.
+- Credits to [@polybuildr](https://github.com/polybuildr/cordova-plugin-activity-recognition) for much of the Android code.
+- Credits to [@mrameezraja](https://github.com/mrameezraja/cordova-plugin-motion-activity) for much of the iOS code.
 
 ## Disclaimer
 
