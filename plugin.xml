@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-wayfarer" version="1.0.0">
-	<name>Wayfarer</name>
-	<license>MIT</license>
-	<description>Cordova plugin for determining activity based on device motion.</description>
-	<keywords>cordova, wayfarer</keywords>
-	<repo>https://github.com/EvanWieland/cordova-plugin-wayfarer.git</repo>
+    <name>Wayfarer</name>
+    <license>MIT</license>
+    <description>Cordova plugin for determining activity based on device motion.</description>
+    <keywords>cordova, wayfarer, motion, activity</keywords>
+    <repo>https://github.com/EvanWieland/cordova-plugin-wayfarer.git</repo>
 
-	<js-module src="www/Wayfarer.js" name="Wayfarer">
-		<clobbers target="window.Wayfarer"/>
-	</js-module>
-	
-	<engines>
-		<engine name="cordova" version=">=3.0.0" />
-	</engines>
+    <js-module src="www/Wayfarer.js" name="Wayfarer">
+        <clobbers target="window.Wayfarer"/>
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+            <feature name="wayfarer">
+                <param name="ios-package" value="Wayfarer"/>
+            </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSMotionUsageDescription">
+            <string>${EXECUTABLE_NAME} requires access to motion data.</string>
+        </config-file>
+
+        <header-file src="src/ios/Wayfarer.h" target-dir="Wayfarer"/>
+        <source-file src="src/ios/Wayfarer.m" target-dir="Wayfarer"/>
+    </platform>
+
+    <platform name="android">
+        <framework src="com.google.android.gms:play-services-location:+"/>
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Wayfarer">
+                <param name="android-package" value="io.bitsmithy.wayfarer.Wayfarer"/>
+            </feature>
+        </config-file>
+
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <meta-data android:name="com.google.android.gms.version"
+                       android:value="@integer/google_play_services_version"/>
+            <service android:name="io.bitsmithy.wayfarer.WayfarerIntentService"/>
+        </config-file>
+
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
+        </config-file>
+
+        <source-file src="src/android/Wayfarer.java"
+                     target-dir="src/cordova-plugin-wayfarer/wayfarer"/>
+        <source-file src="src/android/WayfarerIntentService.java"
+                     target-dir="src/cordova-plugin-wayfarer/wayfarer"/>
+        <source-file src="src/android/WayfarerInit.java"
+                     target-dir="src/cordova-plugin-wayfarer/wayfarer"/>
+        <source-file src="src/android/WayfarerResult.java"
+                     target-dir="src/cordova-plugin-wayfarer/wayfarer"/>
+
+    </platform>
 </plugin>
