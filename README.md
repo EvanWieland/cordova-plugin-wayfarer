@@ -14,7 +14,7 @@ Wayfarer predicts the current activity a user is engaged in by analayzing the de
 - Android
 - iOS
     
-## Properties
+## Methods
 
 - Wayfarer.subscribe
 - Wayfarer.unsubscribe [not complete]
