@@ -27,7 +27,7 @@ Wayfarer.subscribe(
         // activityData returns: 
         // {
         // activity: 'AUTOMOTIVE', 
-        // confidence: '39%'
+        // confidence: '39'
         // }
     },
     function(error){
