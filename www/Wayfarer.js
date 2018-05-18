@@ -70,8 +70,6 @@ Wayfarer.prototype = {
             confidence = (activityData.confidence * 50);
         }
 
-        console.warn(activityData);
-
         return {
             activity  : activity,
             confidence: confidence
