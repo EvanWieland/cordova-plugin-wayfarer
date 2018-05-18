@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-wayfarer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Cordova plugin for determining activity based on device motion.",
   "cordova": {
     "id": "cordova-plugin-wayfarer",

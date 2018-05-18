@@ -101,7 +101,7 @@ Wayfarer.prototype = {
             Wayfarer.prototype._android._connect(
                 function success() {
                     Wayfarer.prototype._android._startActivityUpdates(
-                        2e3,
+                        15e3,
                         function success() {
                             setInterval(function () {
                                 Wayfarer.prototype._android._getActivity(
@@ -112,7 +112,7 @@ Wayfarer.prototype = {
                                         if (errorCB) errorCB(error);
                                     }
                                 );
-                            }, 2e3);
+                            }, 15e3);
                         },
                         function fail(error) {
                             if (errorCB) errorCB(error);
