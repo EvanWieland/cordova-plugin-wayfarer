@@ -11,7 +11,12 @@
     </js-module>
 
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <!--<engine name="cordova" version=">=3.0.0"/>-->
+
+        <!-- NEW -->
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=6.3.0"/>
+        <!-- END NEW -->
     </engines>
 
     <!-- iOS -->
@@ -31,7 +36,12 @@
     </platform>
 
     <platform name="android">
-        <framework src="com.google.android.gms:play-services-location:+"/>
+        <!--<framework src="com.google.android.gms:play-services-location:+"/>-->
+
+        <!-- NEW -->
+        <preference name="PLAY_SERVICES_VERSION" default="12+"/>
+        <framework src="com.google.android.gms:play-services-location:$PLAY_SERVICES_VERSION"/>
+        <!-- END NEW -->
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="Wayfarer">
