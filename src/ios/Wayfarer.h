@@ -11,14 +11,6 @@
 
 - (void)requestUpdates:(CDVInvokedUrlCommand*)command;
 - (void)stopActivity:(CDVInvokedUrlCommand*)command;
+- (void)hasPermission:(CDVInvokedUrlCommand*)command;
 
 @end
-
-//#import <Cordova/CDVPlugin.h>
-//
-//@interface MotionActivity : CDVPlugin
-//
-//- (void)requestUpdates:(CDVInvokedUrlCommand*)command;
-//- (void)stopActivity:(CDVInvokedUrlCommand*)command;
-//
-//@end

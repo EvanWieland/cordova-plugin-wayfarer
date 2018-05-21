@@ -16,6 +16,14 @@ var Wayfarer = function () {
             Wayfarer.prototype._ios._unsubscribe(scb, ecb);
         }
     };
+
+    this.hasPermission = function (scb, ecb) {
+        if (Wayfarer.prototype._os() === 'Android') {
+            Wayfarer.prototype._android._hasPermission(scb);
+        } else if (Wayfarer.prototype._os() === 'iOS') {
+            Wayfarer.prototype._ios._hasPermission(scb, ecb);
+        }
+    };
 };
 
 Wayfarer.prototype = {
@@ -126,7 +134,16 @@ Wayfarer.prototype = {
         },
         _unsubscribe         : function (successCB, errorCB) {
 
-        }
+        },
+        _hasPermission       : function (successCB) {
+            if (!successCB) {
+                successCB = function () {
+                };
+            }
+
+            // Android will always have permission?
+            successCB(true);
+        },
     },
 
     _ios: {
@@ -164,6 +181,17 @@ Wayfarer.prototype = {
                     if (errorCB) errorCB(error);
                 }
             );
+        },
+        _hasPermission : function (success, error) {
+            if (!success) {
+                success = function () {
+                };
+            }
+            if (!error) {
+                error = function () {
+                };
+            }
+            exec(success, error, 'Wayfarer', 'hasPermission', []);
         }
     }
 };
