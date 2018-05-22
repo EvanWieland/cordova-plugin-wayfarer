@@ -78,19 +78,39 @@
 
 - (void)hasPermission:(CDVInvokedUrlCommand*)command
 {
-    NSLog(@"hasPermission");
+    // NSLog(@"hasPermission");
 
-    BOOL isActivityAvailable =  [CMMotionActivityManager isActivityAvailable];
+    // BOOL isActivityAvailable =  [CMAuthorizationStatus isActivityAvailable];
 
-    if(isActivityAvailable){
-        [_motionActivityManager stopActivityUpdates];
+    // NSLog(@"hasPermission");
+
+    // if(isActivityAvailable){
+    //     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"] callbackId:command.callbackId];
+    // }
+    // else
+    // {
+    //     NSLog(@"CMMotionActivityManager is not available");
+    //     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"false"] callbackId:command.callbackId];
+    // }
+
+    typedef enum {
+        kCLAuthorizationStatusNotDetermined = 0,
+        kCLAuthorizationStatusRestricted,
+        kCLAuthorizationStatusDenied,
+        kCLAuthorizationStatusAuthorized
+    } CMAuthorizationStatus;
+
+    if ([CMMotionActivityManager authorizationStatus] == kCLAuthorizationStatusAuthorized)
         [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"] callbackId:command.callbackId];
-    }
-    else
-    {
-        NSLog(@"CMMotionActivityManager is not available");
+    } else {
         [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"false"] callbackId:command.callbackId];
     }
+
+    // if (case authorized >= CMAuthorizationStatus) {
+    //     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"] callbackId:command.callbackId];
+    // } else {
+    //     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"false"] callbackId:command.callbackId];
+    // }
 }
 
 @end
