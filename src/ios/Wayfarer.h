@@ -11,6 +11,5 @@
 
 - (void)requestUpdates:(CDVInvokedUrlCommand*)command;
 - (void)stopActivity:(CDVInvokedUrlCommand*)command;
-- (void)hasPermission:(CDVInvokedUrlCommand*)command;
 
 @end
