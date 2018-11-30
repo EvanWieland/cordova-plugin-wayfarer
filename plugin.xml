@@ -31,6 +31,7 @@
     </platform>
 
     <platform name="android">
+        <!-- Set to V11 to support phonegap-plugin-push -->
         <framework src="com.google.android.gms:play-services-location:11+"/>
 
         <config-file parent="/*" target="res/xml/config.xml">
