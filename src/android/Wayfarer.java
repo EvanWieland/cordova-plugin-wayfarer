@@ -123,11 +123,8 @@ public class Wayfarer extends CordovaPlugin
       result =
           ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(
               mApiClient, interval, pendingIntent);
-      //if(result.isSuccess())// da se vidi kvo pravi PendingResult i kak se izpolzva set result callback !!
-      ActivityUpdatesStarted = true;
-      callback.success();
-      //else
-      //	callback.error("Reqest Not Successful");
+        ActivityUpdatesStarted = true;
+        callback.success();
     } else {
       callback.error("Not Connected");
     }
@@ -141,17 +138,6 @@ public class Wayfarer extends CordovaPlugin
     } else {
       callback.error("Not Connected");
     }
-  }
-
-  @Override
-  public void onPause(boolean multitasking) {
-    //vika se vurhu tekushtoto activity ,
-    // toest ako ne mojesh da vidish  activity - to ne mojesh da vidish i dialoga => ne vurshi rabota v onDestroy !!
-    // AlertDialog.Builder builder = new AlertDialog.Builder(cordova.getActivity());
-    // builder.setMessage("Paused !")
-    // .setTitle("Activity!");
-    // AlertDialog dialog = builder.create();
-    // dialog.show();
   }
 
   @Override
