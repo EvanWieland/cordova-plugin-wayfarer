@@ -31,8 +31,8 @@
     </platform>
 
     <platform name="android">
-        <!-- Set to 14v to support phonegap-plugin-push -->
-        <framework src="com.google.android.gms:play-services-location:14.0.0"/>
+        <!-- Set to 11.4.0v to support phonegap-plugin-push -->
+        <framework src="com.google.android.gms:play-services-location:11.4.0"/>
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="Wayfarer">
