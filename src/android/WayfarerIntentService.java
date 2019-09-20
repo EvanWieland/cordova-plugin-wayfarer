@@ -40,7 +40,8 @@ public class WayfarerIntentService extends IntentService {
       DetectedActivity CurrentActivity = result.getMostProbableActivity();
 
       if (Activity != null) {
-          Activity.ActivityType = ConvertActivityCodeToString(CurrentActivity);
+          // Activity.ActivityType = ConvertActivityCodeToString(CurrentActivity);
+          Activity.ActivityType = CurrentActivity.toString();
           Activity.Probability = CurrentActivity.getConfidence();
       }
     } else {
