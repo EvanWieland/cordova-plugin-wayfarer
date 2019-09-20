@@ -32,7 +32,7 @@
 
     <platform name="android">
         <!-- Set to 11.6.2 to support phonegap-plugin-push -->
-        <framework src="com.google.android.gms:play-services-location:17.0.0"/>
+        <framework src="com.google.android.gms:play-services-location:16.0.0"/>
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="Wayfarer">
