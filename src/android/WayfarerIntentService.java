@@ -12,27 +12,6 @@ public class WayfarerIntentService extends IntentService {
     super("WayfarerIntentService");
   }
 
-  private String ConvertActivityCodeToString(DetectedActivity Activity) {
-    switch (Activity.getType()) {
-      case DetectedActivity.IN_VEHICLE:
-        return "IN_VEHICLE";
-      case DetectedActivity.ON_BICYCLE:
-        return "ON_BICYCLE";
-      case DetectedActivity.ON_FOOT:
-        return "ON_FOOT";
-      case DetectedActivity.RUNNING:
-        return "RUNNING";
-      case DetectedActivity.STILL:
-        return "STILL";
-      case DetectedActivity.TILTING:
-        return "TILTING";
-      case DetectedActivity.WALKING:
-        return "WALKING";
-    }
-
-    return "UNKNOWN";
-  }
-
   @Override
   protected void onHandleIntent(Intent intent) {
     if (ActivityRecognitionResult.hasResult(intent)) {
@@ -40,7 +19,6 @@ public class WayfarerIntentService extends IntentService {
       DetectedActivity CurrentActivity = result.getMostProbableActivity();
 
       if (Activity != null) {
-          // Activity.ActivityType = ConvertActivityCodeToString(CurrentActivity);
           Activity.ActivityType = CurrentActivity.toString();
           Activity.Probability = CurrentActivity.getConfidence();
       }
