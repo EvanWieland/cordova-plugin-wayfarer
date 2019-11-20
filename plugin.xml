@@ -39,6 +39,19 @@
                 <param name="android-package" value="io.bitsmithy.wayfarer.Wayfarer"/>
             </feature>
         </config-file>
+        
+        <!-- TEST BED -->
+        <config-file parent="/manifest" target="AndroidManifest.xml" mode="merge">
+            <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
+        </config-file>
+
+        <!-- END TEST BED -->
+        
+        <config-file parent="/manifest/application" target="AndroidManifest.xml" mode="merge">
+            <meta-data android:name="com.google.android.gms.version"
+                       android:value="@integer/google_play_services_version"/>
+            <service android:name="io.bitsmithy.wayfarer.WayfarerIntentService"/>
+        </config-file>
 
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <meta-data android:name="com.google.android.gms.version"
