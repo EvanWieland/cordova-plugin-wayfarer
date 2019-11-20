@@ -45,6 +45,10 @@
 <!--         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
             <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
         </edit-config> -->
+        
+        <config-file parent="/manifest/application" target="AndroidManifest.xml" mode="merge">
+          <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
+        </config-file>
 
         <!-- END TEST BED -->
         
