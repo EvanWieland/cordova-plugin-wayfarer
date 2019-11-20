@@ -41,15 +41,19 @@
         </config-file>
         
         <!-- TEST BED -->
-        <config-file parent="/manifest" target="AndroidManifest.xml" mode="merge">
+        
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
             <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
-        </config-file>
+        </edit-config>
 
         <!-- END TEST BED -->
         
         <config-file parent="/manifest/application" target="AndroidManifest.xml" mode="merge">
-            <meta-data android:name="com.google.android.gms.version"
-                       android:value="@integer/google_play_services_version"/>
+            <!-- TEST BED -->
+            <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_stat_name" />
+            <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/colorAccent" />
+            <!-- END TEST BED -->
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
             <service android:name="io.bitsmithy.wayfarer.WayfarerIntentService"/>
         </config-file>
 
