@@ -46,7 +46,7 @@
             <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
         </edit-config> -->
         
-        <config-file parent="/manifest" target="AndroidManifest.xml" mode="replace">
+        <config-file parent="/manifest/application" target="AndroidManifest.xml" mode="replace">
           <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
         </config-file>
 
