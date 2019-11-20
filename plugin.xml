@@ -42,9 +42,9 @@
         
         <!-- TEST BED -->
         
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+<!--         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
             <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
-        </edit-config>
+        </edit-config> -->
 
         <!-- END TEST BED -->
         
